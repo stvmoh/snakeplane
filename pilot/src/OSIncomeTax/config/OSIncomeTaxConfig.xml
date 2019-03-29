@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<AlteryxJavaScriptPlugin>
+  <EngineSettings EngineDll="Python" EngineDllEntryPoint="main.py" SDKVersion="10.1" />
+  <GuiSettings Html="gui/OSIncomeTaxGui.html" Icon="OSIncomeTaxIcon.png" SDKVersion="10.1">
+    <InputConnections>
+    </InputConnections>
+    <OutputConnections>
+      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+    </OutputConnections>
+  </GuiSettings>
+  <Properties>
+    <MetaInfo>
+      <Name>OSIncomeTax</Name>
+      <Description>OneSource Income Tax Tool</Description>
+      <ToolVersion>1.0</ToolVersion>
+      <CategoryName>SDK Examples</CategoryName>
+      <SearchTags>python, sdk, select, sample, top, records, python sdk</SearchTags>
+      <Author>Mohsen</Author>
+      <Company>Thomosn Reuters</Company>
+      <Copyright>2017</Copyright>
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>
