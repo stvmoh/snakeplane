@@ -19,11 +19,19 @@
 </style>
 
 <body>
-	<h2>Example Source Tool</h2>
+	<h2>ONESOURCE Income Tax POC</h2>
 
 	<div class="configItem">
-		<label>XMSG("Value:")</label>
-		<ayx data-ui-props='{type: "NumericSpinner", widgetId:"AppendValNum"}'>
+		<label for="accessToken">XMSG("Access Token")</label>
+        <ayx aria-label='accessToken-textbox' data-ui-props='{type:"TextBox", widgetId:"accessToken"}' data-item-props='{dataName:"accessToken", dataType:"SimpleString"}'>
+		</ayx>
+
+		<label for="binderId">XMSG("Binder ID")</label>
+        <ayx aria-label='binderId-textbox' data-ui-props='{type:"TextBox", widgetId:"binderId"}' data-item-props='{dataName:"binderId", dataType:"SimpleString"}'>
+		</ayx>
+
+		<label for="apiFamily">XMSG("API Family")</label>
+        <ayx aria-label="apiFamily-dropdown" data-ui-props='{type:"DropDown", widgetId:"apiFamily"}' data-item-props='{dataName:"apiFamily", dataType:"StringSelector"}'>
 		</ayx>
 	</div>
 
