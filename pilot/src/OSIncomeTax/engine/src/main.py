@@ -28,15 +28,18 @@ factory = PluginFactory("OSIncomeTax")
 def init(input_mgr, user_data, logger):
     """Initialize the example source tool."""
      # Get the selected value from the GUI and save it for later use in the user_data
-    user_data.val = float(input_mgr.workflow_config["Value"])
 
     # Display info on the selected value
-    logger.display_info_msg(f"The value selected is {user_data.val}")
+    user_data.accessToken = input_mgr.workflow_config["accessToken"]
+    user_data.binderId = input_mgr.workflow_config["binderId"]
+    user_data.apiFamily = input_mgr.workflow_config["apiFamily"]
+
+    # Display info on the selected value
+    logger.display_info_msg(f"The accessToken selected is {user_data.accessToken}")
+    logger.display_info_msg(f"The binderId selected is {user_data.binderId}")
+    logger.display_info_msg(f"The apiFamily selected is {user_data.apiFamily}")
 
     # This time throw an error if greater than 0.5
-    if user_data.val > 0.5:
-        logger.display_error_msg(f"The value selected is greater than 0.5")
-
     return True
 
 
@@ -45,11 +48,11 @@ def process_data(output_mgr, user_data, logger): # I don't need an input_mgr, so
     """Generate some data to source."""
 
     # Append results to records
-    df = pd.DataFrame({"Value": [user_data.val]})
+    #df = pd.DataFrame({"Value": [user_data.val]})
 
     # Return dictionary with data/metadata
-    data_out = output_mgr["Output"]
-    data_out.data = df
+    #data_out = output_mgr["Output"]
+    #data_out.data = df
 
 
 @factory.build_metadata
@@ -58,12 +61,12 @@ def build_metadata(output_mgr):
     # This tool will output a single column with double data
 
     # Create a new metadata object
-    metadata = output_mgr.create_anchor_metadata()
+    #metadata = output_mgr.create_anchor_metadata()
 
-    metadata.add_column("Test", sdk.FieldType.double, source="ExampleSourceTool")
+    #metadata.add_column("Test", sdk.FieldType.double, source="ExampleSourceTool")
 
-    data_out = output_mgr["Output"]
-    data_out.metadata = metadata
+    #data_out = output_mgr["Output"]
+    #data_out.metadata = metadata
 
 
 AyxPlugin = factory.generate_plugin()
