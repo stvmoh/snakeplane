@@ -39,6 +39,15 @@ def init(input_mgr, user_data, logger):
     logger.display_info_msg(f"The binderId selected is {user_data.binderId}")
     logger.display_info_msg(f"The apiFamily selected is {user_data.apiFamily}")
 
+    if user_data.accessToken == None:
+        logger.display_error_msg(f"Please enter your Access Token.")
+
+    if user_data.binderId == None:
+        logger.display_error_msg(f"Please enter your Binder ID.")
+
+    if user_data.apiFamily == None:
+        logger.display_error_msg(f"Please select an API Family")
+
     # This time throw an error if greater than 0.5
     return True
 
