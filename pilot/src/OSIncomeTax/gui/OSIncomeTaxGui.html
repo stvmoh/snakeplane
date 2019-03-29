@@ -38,6 +38,13 @@
 	<script type="text/javascript">
 		Alteryx.Gui.BeforeLoad = function (manager, AlteryxDataItems, json) {
 			var alphaFloatSelector = new AlteryxDataItems.ConstrainedFloat('Value')
+
+			const apiFamily = manager.getDataItem('apiFamily');
+			apiFamily.setOptionList([
+				{ label: 'XMSG("Income Tax")', value: 'incomeTax' }
+			])
+
+			apiFamily.setValue('incomeTax');
 			alphaFloatSelector.setMin(0)
 			alphaFloatSelector.setMax(1)
 			alphaFloatSelector.setStep(0.01)
